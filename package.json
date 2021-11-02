@@ -1,0 +1,15 @@
+{
+  "name": "example-pdf-server-with-playwright",
+  "version": "1.0.0",
+  "description": "poc kub",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jungai/example-pdf-server-with-playwright.git"
+  },
+  "author": "jungai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jungai/example-pdf-server-with-playwright/issues"
+  },
+  "homepage": "https://github.com/jungai/example-pdf-server-with-playwright#readme"
+}
