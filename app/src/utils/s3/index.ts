@@ -4,6 +4,7 @@ import { getAwsAccessKeyId, getAwsSecretAccessKey, getBucketName } from '../get_
 export const s3Client: S3Client = new S3Client({
     region: 'ap-southeast-1',
     credentials: {
+        // create unique user for example policy/AmazonS3FullAccess
         accessKeyId: getAwsAccessKeyId(),
         secretAccessKey: getAwsSecretAccessKey(),
     },
