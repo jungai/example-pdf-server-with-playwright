@@ -28,5 +28,9 @@ import { generatePdf } from './utils/pdf';
         next() {
             console.log('done');
         },
+        error(error) {
+            // TODO: handle this error
+            console.log(error);
+        },
     });
 })();
