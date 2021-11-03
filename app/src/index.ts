@@ -1,19 +1,11 @@
 import 'dotenv/config';
 import { Readable } from 'stream';
-import { generatePdf, getBucketName, getObjectInS3, s3Client } from './utils';
+import { generatePdf, getObjectInS3 } from './utils';
 import { streamToString } from './utils';
 import { from, mergeMap, tap } from 'rxjs';
 
 (() => {
-    const pdfBuffer = from(
-        s3Client.send(
-            getObjectInS3({
-                Bucket: getBucketName(),
-                Key: 'index.html', // test eiei
-                ResponseContentType: 'application/html',
-            }),
-        ),
-    ).pipe(
+    const pdfBuffer = from(getObjectInS3('index.html')).pipe(
         tap((s3Output) => {
             if (!s3Output) {
                 throw new Error('no s3 output!!');
