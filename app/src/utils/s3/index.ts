@@ -1,5 +1,5 @@
-import { S3Client, GetObjectCommand, GetObjectCommandInput } from '@aws-sdk/client-s3';
-import { getAwsAccessKeyId, getAwsSecretAccessKey } from '../get_env';
+import { S3Client, GetObjectCommand, GetObjectCommandOutput } from '@aws-sdk/client-s3';
+import { getAwsAccessKeyId, getAwsSecretAccessKey, getBucketName } from '../get_env';
 
 export const s3Client: S3Client = new S3Client({
     region: 'ap-southeast-1',
@@ -9,8 +9,14 @@ export const s3Client: S3Client = new S3Client({
     },
 });
 
-export function getObjectInS3(input: GetObjectCommandInput): GetObjectCommand {
-    return new GetObjectCommand({
-        ...input,
-    });
+export async function getObjectInS3(key: string): Promise<GetObjectCommandOutput> {
+    const data = await s3Client.send(
+        new GetObjectCommand({
+            Key: key,
+            Bucket: getBucketName(),
+            ResponseContentType: 'application/html',
+        }),
+    );
+
+    return data;
 }
