@@ -1,9 +1,8 @@
 import 'dotenv/config';
 import { Readable } from 'stream';
-import { getBucketName, getObjectInS3, s3Client } from './utils';
-import { streamToString } from './utils/stream_to_string';
+import { generatePdf, getBucketName, getObjectInS3, s3Client } from './utils';
+import { streamToString } from './utils';
 import { from, mergeMap, tap } from 'rxjs';
-import { generatePdf } from './utils/pdf';
 
 (() => {
     const pdfBuffer = from(
