@@ -2,6 +2,7 @@ import { Browser, chromium } from 'playwright';
 
 export async function generatePdf(html: string) {
     let browser: Browser | undefined;
+
     try {
         browser = await chromium.launch({ headless: false });
         const page = await browser.newPage();
