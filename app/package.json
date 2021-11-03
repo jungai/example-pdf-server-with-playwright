@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.1019.0",
+    "dotenv": "^10.0.0",
     "playwright": "^1.16.3"
   }
 }
