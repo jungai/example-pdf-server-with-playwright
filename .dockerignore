@@ -1,0 +1,9 @@
+# ignore everything
+*
+
+# except
+!./package.json
+!./pnpm-workspace.yaml
+!./pnpm-lock.yaml
+!./app/lib
+!./app/package.json
