@@ -4,7 +4,7 @@ export async function generatePdf(html: string) {
     let browser: Browser | undefined;
 
     try {
-        browser = await chromium.launch({ headless: false });
+        browser = await chromium.launch({ headless: true });
         const page = await browser.newPage();
         await page.setContent(html);
         await page.screenshot({ path: `example.png` });
