@@ -1,5 +1,5 @@
-# FROM mcr.microsoft.com/playwright:focal
-FROM mcr.microsoft.com/playwright:next-focal
+FROM mcr.microsoft.com/playwright:focal
+# FROM mcr.microsoft.com/playwright:next-focal
 
 WORKDIR /home/jungai/pdf-server
 
