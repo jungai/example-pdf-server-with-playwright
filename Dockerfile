@@ -14,7 +14,7 @@ COPY ./app/package.json ./app/package.json
 
 RUN pnpm install -r --frozen-lockfile -P
 
-COPY ./app/lib ./app/lib
+COPY . .
 
 WORKDIR /home/jungai/pdf-server/app
 
